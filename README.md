@@ -13,8 +13,12 @@ pnpm cdk deploy --all
 aws s3 ls
 
 ### ファイルのアップロード
+echo "Hello, S3!" > sample.txt
 aws s3 cp sample.txt s3://aws-train-bucket-20260705/uploaded.txt
 
+### ログを確認する
+aws logs describe-log-groups
+aws logs describe-log-groups　--log-group-name-prefix "/aws/lambda/ApplicationStack"
 
 # Welcome to your CDK TypeScript project
 

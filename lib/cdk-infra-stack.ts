@@ -2,6 +2,7 @@ import * as cdk from "aws-cdk-lib";
 import * as s3 from "aws-cdk-lib/aws-s3";
 import * as s3n from "aws-cdk-lib/aws-s3-notifications";
 import * as lambda from "aws-cdk-lib/aws-lambda";
+import * as logs from "aws-cdk-lib/aws-logs";
 import { Construct } from "constructs";
 
 export interface CdkInfraStackProps extends cdk.StackProps {
@@ -16,7 +17,7 @@ export class CdkInfraStack extends cdk.Stack {
       bucketName: "aws-train-bucket-20260705",
       versioned: false,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
-      autoDeleteObjects: true,
+      autoDeleteObjects: true,      
     });
 
     bucket.addEventNotification(
