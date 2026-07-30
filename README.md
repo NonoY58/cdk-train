@@ -3,22 +3,27 @@
 
 InfrastructureStack S3のデプロイ
 
-
 ## Commands
-pnpm cdk deploy InfrastructureStack
-pnpm cdk destroy InfrastructureStack
+`pnpm cdk deploy InfrastructureStack`
+`pnpm cdk destroy InfrastructureStack`
 
-pnpm cdk deploy --all
+`pnpm cdk deploy --all`
 
-aws s3 ls
+- S3バケット名を表示
+`aws s3 ls`
+- Lambdaの関数名を表示（--queryでJSON内を検索）
+`aws lambda list-functions --query "Functions[].FunctionName" --output text`
+  - 以下ではJSONが返る
+  `aws lambda list-functions`
+
 
 ### ファイルのアップロード
-echo "Hello, S3!" > sample.txt
-aws s3 cp sample.txt s3://aws-train-bucket-20260705/uploaded.txt
+`echo "Hello, S3!" > sample.txt`
+`aws s3 cp sample.txt s3://aws-train-bucket-20260705/uploaded.txt`
 
 ### ログを確認する
-aws logs describe-log-groups
-aws logs describe-log-groups　--log-group-name-prefix "/aws/lambda/ApplicationStack"
+`aws logs describe-log-groups`
+`aws logs describe-log-groups --log-group-name-prefix "/aws/lambda/ApplicationStack"`
 
 # Welcome to your CDK TypeScript project
 
