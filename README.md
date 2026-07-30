@@ -18,28 +18,11 @@ SqsStack SQSのデプロイ
 
 - S3バケット名を表示
   - `aws s3 ls`
+
 - Lambdaの関数名を表示（--queryでJSON内を検索）
   - `aws lambda list-functions --query "Functions[].FunctionName" --output text`
   - 以下ではJSONが返る
     - `aws lambda list-functions`
-- SQS
-  - 送信
-    ```
-    aws sqs send-message \
-    --queue-url https://sqs.ap-northeast-1.amazonaws.com/416790051133/aws-train-queue-20260730 \
-    --message-body "Hello SQS"
-    ```
-  - 受信
-    ```
-    aws sqs receive-message \
-    --queue-url https://sqs.ap-northeast-1.amazonaws.com/416790051133/aws-train-queue-20260730
-    ```
-  - 削除
-    ```
-    aws sqs delete-message \
-    --queue-url https://sqs.ap-northeast-1.amazonaws.com/416790051133/aws-train-queue-20260730 \
-    --receipt-handle "AQEB..."
-    ```
 
 ### ファイルのアップロード
 - `echo "Hello, S3!" > sample.txt`
@@ -47,7 +30,28 @@ SqsStack SQSのデプロイ
 
 ### ログを確認する
 - `aws logs describe-log-groups`
-- `aws logs describe-log-groups --log-group-name-prefix "/aws/lambda/ApplicationStack"`
+- `aws logs describe-log-groups --log-group-name-prefix "/aws/lambda"`
+
+### SQS動作確認
+- 送信
+```
+aws sqs send-message \
+--queue-url https://sqs.ap-northeast-1.amazonaws.com/416790051133/aws-train-queue-20260730 \
+--message-body "Hello SQS"
+```
+- 受信
+```
+aws sqs receive-message \
+--queue-url https://sqs.ap-northeast-1.amazonaws.com/416790051133/aws-train-queue-20260730
+```
+- 削除
+```
+aws sqs delete-message \
+--queue-url https://sqs.ap-northeast-1.amazonaws.com/416790051133/aws-train-queue-20260730 \
+--receipt-handle "AQEB..."
+```
+
+
 
 # Welcome to your CDK TypeScript project
 
