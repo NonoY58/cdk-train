@@ -10,20 +10,20 @@ InfrastructureStack S3のデプロイ
 `pnpm cdk deploy --all`
 
 - S3バケット名を表示
-`aws s3 ls`
+  - `aws s3 ls`
 - Lambdaの関数名を表示（--queryでJSON内を検索）
-`aws lambda list-functions --query "Functions[].FunctionName" --output text`
+  - `aws lambda list-functions --query "Functions[].FunctionName" --output text`
   - 以下ではJSONが返る
-  `aws lambda list-functions`
+    - `aws lambda list-functions`
 
 
 ### ファイルのアップロード
-`echo "Hello, S3!" > sample.txt`
-`aws s3 cp sample.txt s3://aws-train-bucket-20260705/uploaded.txt`
+- `echo "Hello, S3!" > sample.txt`
+- `aws s3 cp sample.txt s3://aws-train-bucket-20260705/uploaded.txt`
 
 ### ログを確認する
-`aws logs describe-log-groups`
-`aws logs describe-log-groups --log-group-name-prefix "/aws/lambda/ApplicationStack"`
+- `aws logs describe-log-groups`
+- `aws logs describe-log-groups --log-group-name-prefix "/aws/lambda/ApplicationStack"`
 
 # Welcome to your CDK TypeScript project
 
