@@ -4,10 +4,10 @@
 InfrastructureStack S3のデプロイ
 
 ## Commands
-`pnpm cdk deploy InfrastructureStack`
-`pnpm cdk destroy InfrastructureStack`
+- `pnpm cdk deploy InfrastructureStack`
+- `pnpm cdk destroy InfrastructureStack`
 
-`pnpm cdk deploy --all`
+- `pnpm cdk deploy --all`
 
 - S3バケット名を表示
   - `aws s3 ls`
