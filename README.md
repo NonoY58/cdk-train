@@ -2,12 +2,19 @@
 ## Stacks
 
 InfrastructureStack S3のデプロイ
+SqsStack SQSのデプロイ
 
 ## Commands
-- `pnpm cdk deploy InfrastructureStack`
-- `pnpm cdk destroy InfrastructureStack`
+- S3とLambda
+    - `pnpm cdk deploy InfrastructureStack`
+    - `pnpm cdk destroy InfrastructureStack`
 
-- `pnpm cdk deploy --all`
+- SQS
+    - `pnpm cdk deploy SqsStack`
+    - `pnpm cdk destroy SqsStack`
+
+- 全部
+    - `pnpm cdk deploy --all`
 
 - S3バケット名を表示
   - `aws s3 ls`
@@ -15,7 +22,24 @@ InfrastructureStack S3のデプロイ
   - `aws lambda list-functions --query "Functions[].FunctionName" --output text`
   - 以下ではJSONが返る
     - `aws lambda list-functions`
-
+- SQS
+  - 送信
+    ```
+    aws sqs send-message \
+    --queue-url https://sqs.ap-northeast-1.amazonaws.com/416790051133/aws-train-queue-20260730 \
+    --message-body "Hello SQS"
+    ```
+  - 受信
+    ```
+    aws sqs receive-message \
+    --queue-url https://sqs.ap-northeast-1.amazonaws.com/416790051133/aws-train-queue-20260730
+    ```
+  - 削除
+    ```
+    aws sqs delete-message \
+    --queue-url https://sqs.ap-northeast-1.amazonaws.com/416790051133/aws-train-queue-20260730 \
+    --receipt-handle "AQEB..."
+    ```
 
 ### ファイルのアップロード
 - `echo "Hello, S3!" > sample.txt`
