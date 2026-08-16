@@ -1,9 +1,0 @@
-site_name: CDK Train
-theme:
-  name: material
-
-nav:
-  - Home: index.md
-
-docs_dir: ../docs
-site_dir: ../.github/site
