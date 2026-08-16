@@ -5,7 +5,7 @@ on:
     branches: ["main"]
     paths:
       - "docs/**"
-      - ".github/workflows/jekyll-gh-pages.yml"
+      - ".github/workflows/jekyll-gh-page.yml"
       - "!docs/openapi.yml"
 
   pull_request:
