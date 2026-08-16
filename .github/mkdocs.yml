@@ -5,5 +5,5 @@ theme:
 nav:
   - Home: index.md
 
-docs_dir: docs
+docs_dir: ../docs
 site_dir: site
