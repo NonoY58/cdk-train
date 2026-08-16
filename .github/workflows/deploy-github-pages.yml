@@ -6,13 +6,13 @@ on:
     paths:
       - "docs/**"
       - ".github/workflows/deploy-github-pages.yml"
-      - "!docs/openapi.yml"
+      - "!docs//**/openapi.yml"
 
   pull_request:
     paths:
       - "docs/**"
       - ".github/workflows/deploy-github-pages.yml"
-      - "!docs/openapi.yml"
+      - "!docs//**/openapi.yml"
   workflow_dispatch:
 
 permissions:
