@@ -1,5 +1,6 @@
 {
   "app": "pnpm exec ts-node --prefer-ts-exts bin/cdk-train.ts",
+  "requireApproval": "never",
   "watch": {
     "include": [
       "**"

@@ -24,6 +24,9 @@ SqsStack SQSのデプロイ
   - 以下ではJSONが返る
     - `aws lambda list-functions`
 
+- SQSのリスト
+  - `aws sqs list-queues`
+
 ### ファイルのアップロード
 - `echo "Hello, S3!" > sample.txt`
 - `aws s3 cp sample.txt s3://aws-train-bucket-20260705/uploaded.txt`
